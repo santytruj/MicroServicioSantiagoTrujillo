@@ -70,7 +70,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"CuentaNumero\": \"495878\",\r\n  \"CuentaIdCliente\": 3,\r\n  \"CuentaTipo\": \"Ahorros\",\r\n  \"CuentaEstado\": true\r\n }"
+					"raw": "{\r\n  \"CuentaNumero\": \"585545\",\r\n  \"CuentaIdCliente\": 1,\r\n  \"CuentaTipo\": \"Corriente\",\r\n  \"CuentaEstado\": true\r\n }"
 				},
 				"url": {
 					"raw": "{{url}}/api/Cuentas",
@@ -100,7 +100,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"MovimientoNumeroCuenta\": \"478758\",\r\n  \"MovientoTipoMovimiento\": \"string\",\r\n  \"MovimientoSaldoInicial\": 0,\r\n  \"MoMovimiento\": 2000\r\n}"
+					"raw": "{\r\n  \"MovimientoNumeroCuenta\": \"225487\",\r\n  \"MovimientoTipoMovimiento\": \"Debito\",\r\n  \"MovimientoSaldoInicial\": 0,\r\n  \"MoMovimiento\": 100\r\n}"
 				},
 				"url": {
 					"raw": "{{url}}/api/Movimientos",
@@ -129,7 +129,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"moNumeroCuenta\": \"478758\",\r\n  \"moTipoMovimiento\": \"Debito\",\r\n  \"moMovimiento\": 50\r\n}"
+					"raw": "{\r\n  \"MovimientoNumeroCuenta\": \"225487\",\r\n  \"MovimientoTipoMovimiento\": \"Debito\",\r\n  \"MoMovimiento\": 100\r\n}"
 				},
 				"url": {
 					"raw": "{{url}}/api/Movimientos",
@@ -158,7 +158,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"moNumeroCuenta\": \"496825\",\r\n  \"moTipoMovimiento\": \"Debito\",\r\n  \"moMovimiento\": 540\r\n}"
+					"raw": "{\r\n  \"MovimientoNumeroCuenta\": \"496825\",\r\n  \"MovimientoTipoMovimiento\": \"Debito\",\r\n  \"moMovimiento\": 540\r\n}"
 				},
 				"url": {
 					"raw": "{{url}}/api/Movimientos",
@@ -187,7 +187,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"moNumeroCuenta\": \"225487\",\r\n  \"moTipoMovimiento\": \"Credito\",\r\n  \"moMovimiento\": 600\r\n}"
+					"raw": "{\r\n  \"MovimientoNumeroCuenta\": \"225487\",\r\n  \"MovimientoTipoMovimiento\": \"Credito\",\r\n  \"MoMovimiento\": 600\r\n}"
 				},
 				"url": {
 					"raw": "{{url}}/api/Movimientos",
@@ -216,7 +216,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"moNumeroCuenta\": \"495878\",\r\n  \"moTipoMovimiento\": \"Credito\",\r\n  \"moSaldoInicial\": 0,\r\n  \"moMovimiento\": 150\r\n}"
+					"raw": "{\r\n  \"MovimientoNumeroCuenta\": \"478758\",\r\n  \"MovimientoTipoMovimiento\": \"Credito\",\r\n  \"MovimientoSaldoInicial\": 2000,\r\n  \"moMovimiento\": 2000\r\n}"
 				},
 				"url": {
 					"raw": "{{url}}/api/Movimientos",
@@ -244,14 +244,14 @@
 					"urlencoded": []
 				},
 				"url": {
-					"raw": "{{url}}/api/Movimientos/111111111&2022-05-28&2022-05-29",
+					"raw": "{{url}}/api/Movimientos/2222222222&2022-07-24&2022-07-29",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"Movimientos",
-						"111111111&2022-05-28&2022-05-29"
+						"2222222222&2022-07-24&2022-07-29"
 					]
 				}
 			},
