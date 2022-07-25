@@ -17,10 +17,7 @@ namespace MicroServicioSantiagoTrujillo.Controllers
 
         private readonly BaseMicroServicioSantiagoTrujilloContext _context;
 
-        public ClientesController(BaseMicroServicioSantiagoTrujilloContext context)
-        {
-            _context = context;
-        }
+        public ClientesController(BaseMicroServicioSantiagoTrujilloContext context) => _context = context;
 
         // GET: api/Clientes
         [HttpGet]
@@ -35,12 +32,7 @@ namespace MicroServicioSantiagoTrujillo.Controllers
         {
             var cliente = await _context.Clientes.FindAsync(id);
 
-            if (cliente == null)
-            {
-                return NotFound();
-            }
-
-            return cliente;
+            return cliente == null ? NotFound() : cliente;
         }
 
         // PUT: api/Clientes/5
@@ -66,16 +58,15 @@ namespace MicroServicioSantiagoTrujillo.Controllers
             }
             catch (DbUpdateConcurrencyException ex)
             {
-                if (ClienteExists(cliente.PersonaIdentificacion))
+                if (!ClienteExists(cliente.PersonaIdentificacion))
                 {
                     respuesta.Mensaje = ex.Message;
                     return respuesta;
                 }
-                else
-                {
-                    respuesta.Mensaje = ex.Message;
-                    return respuesta;
-                }
+
+                respuesta.Mensaje = ex.Message;
+                return respuesta;
+                
             }
 
         }
@@ -121,9 +112,6 @@ namespace MicroServicioSantiagoTrujillo.Controllers
             return respuesta;
         }
 
-        private bool ClienteExists(string id)
-        {
-            return _context.Clientes.Any(e => e.PersonaIdentificacion == id);
-        }
+        private bool ClienteExists(string id) => _context.Clientes.Any(e => e.PersonaIdentificacion == id);
     }
 }

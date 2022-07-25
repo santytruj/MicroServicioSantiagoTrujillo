@@ -15,7 +15,6 @@ namespace MicroServicioSantiagoTrujillo.Entidades
         public decimal MovimientoSaldoInicial { get; set; }
         public decimal MoMovimiento { get; set; }
         public decimal MovimientoSaldoDisponible { get; set; }
-
         public virtual ECuenta MovimientoNumeroCuentaNavigation { get; set; }
     }
 }

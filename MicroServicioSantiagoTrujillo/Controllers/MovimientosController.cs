@@ -17,10 +17,7 @@ namespace MicroServicioSantiagoTrujillo.Controllers
     {
         private readonly BaseMicroServicioSantiagoTrujilloContext _context;
 
-        public MovimientosController(BaseMicroServicioSantiagoTrujilloContext context)
-        {
-            _context = context;
-        }
+        public MovimientosController(BaseMicroServicioSantiagoTrujilloContext context) => _context = context;
 
         // GET: api/Movimientos
         [HttpGet]
@@ -35,12 +32,7 @@ namespace MicroServicioSantiagoTrujillo.Controllers
         {
             var movimiento = await _context.Movimientos.FindAsync(id);
 
-            if (movimiento == null)
-            {
-                return NotFound();
-            }
-
-            return movimiento;
+            return movimiento == null ? NotFound() : movimiento;
         }
 
         // PUT: api/Movimientos/5
@@ -71,11 +63,9 @@ namespace MicroServicioSantiagoTrujillo.Controllers
                     respuesta.Mensaje = ex.Message;
                     return respuesta;
                 }
-                else
-                {
-                    respuesta.Mensaje = ex.Message;
-                    return respuesta;
-                }
+
+                respuesta.Mensaje = ex.Message;
+                return respuesta;
             }
         }
 
@@ -131,7 +121,8 @@ namespace MicroServicioSantiagoTrujillo.Controllers
             }
             else
             {
-                movimiento.MovimientoSaldoDisponible = ultimoMovimiento.MovimientoSaldoDisponible + movimiento.MoMovimiento;
+                movimiento.MovimientoSaldoDisponible =
+                    ultimoMovimiento.MovimientoSaldoDisponible + movimiento.MoMovimiento;
                 respuesta.StatusSuccess = true;
                 _context.Movimientos.Add(movimiento);
                 await _context.SaveChangesAsync();
@@ -146,6 +137,7 @@ namespace MicroServicioSantiagoTrujillo.Controllers
         public async Task<IActionResult> DeleteMovimiento(int id)
         {
             var movimiento = await _context.Movimientos.FindAsync(id);
+
             if (movimiento == null)
             {
                 return NotFound();
@@ -157,10 +149,7 @@ namespace MicroServicioSantiagoTrujillo.Controllers
             return NoContent();
         }
 
-        private bool MovimientoExists(int id)
-        {
-            return _context.Movimientos.Any(e => e.MovimientoIdMovimiento == id);
-        }
+        private bool MovimientoExists(int id) => _context.Movimientos.Any(e => e.MovimientoIdMovimiento == id);
 
         [HttpPost("{strNumeroCuenta}&{decMontoTransaccion}")]
         public Respuesta ValidarCupos(string strNumeroCuenta, decimal decMontoTransaccion)

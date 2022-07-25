@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  microserviciosantiagotrujillo:
+    image: ${DOCKER_REGISTRY-}microserviciosantiagotrujillo
+    build:
+      context: .
+      dockerfile: MicroServicioSantiagoTrujillo\Dockerfile

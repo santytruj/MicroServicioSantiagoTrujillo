@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServicioSantiagoTrujil
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroservicioSantiagoTrujillo.AccesoDatos", "MicroservicioSantiagoTrujillo.AccesoDatos\MicroservicioSantiagoTrujillo.AccesoDatos.csproj", "{E895495A-055C-4D80-B568-31A2DB6211E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicioSantiagoTrujillo.PruebasUnitarias", "MicroservicioSantiagoTrujillo.PruebasUnitarias\MicroservicioSantiagoTrujillo.PruebasUnitarias.csproj", "{A1653E8D-5C8A-4B8A-8A87-039C6AB18457}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroservicioSantiagoTrujillo.PruebasUnitarias", "MicroservicioSantiagoTrujillo.PruebasUnitarias\MicroservicioSantiagoTrujillo.PruebasUnitarias.csproj", "{A1653E8D-5C8A-4B8A-8A87-039C6AB18457}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4288B5A3-27CD-46A0-880A-E93F2E098368}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A1653E8D-5C8A-4B8A-8A87-039C6AB18457}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1653E8D-5C8A-4B8A-8A87-039C6AB18457}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1653E8D-5C8A-4B8A-8A87-039C6AB18457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4288B5A3-27CD-46A0-880A-E93F2E098368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4288B5A3-27CD-46A0-880A-E93F2E098368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4288B5A3-27CD-46A0-880A-E93F2E098368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4288B5A3-27CD-46A0-880A-E93F2E098368}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

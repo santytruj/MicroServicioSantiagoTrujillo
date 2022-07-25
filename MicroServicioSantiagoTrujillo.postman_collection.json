@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "865b3f68-077a-45f1-a6f0-7ce7858c4a07",
+		"name": "MicroServicioSantiagoTrujillo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ConsultaCliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/Clientes/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Clientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creacion Cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \r\n  \"PersonaIdentificacion\": \"3333333333\",\r\n  \"PersonaNombre\": \"Juan Osorio\",\r\n  \"PersonaGenero\": \"Masculino\",\r\n  \"PersonaEdad\": \"27\",\r\n  \"PersonaDireccion\": \"13 junio y Equinoccial\",\r\n  \"PersonaTelefono\": \"098874587\",\r\n  \"ClienteContrasena\": \"1245\",\r\n  \"ClienteEstado\": true\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/Clientes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creacion Cuenta",
+			"protocolProfileBehavior": {
+				"strictSSL": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"CuentaNumero\": \"495878\",\r\n  \"CuentaIdCliente\": 3,\r\n  \"CuentaTipo\": \"Ahorros\",\r\n  \"CuentaEstado\": true\r\n }"
+				},
+				"url": {
+					"raw": "{{url}}/api/Cuentas",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Cuentas"
+					]
+				},
+				"description": "Creacion de Cuenta"
+			},
+			"response": []
+		},
+		{
+			"name": "MovimientoExcedido",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"MovimientoNumeroCuenta\": \"478758\",\r\n  \"MovientoTipoMovimiento\": \"string\",\r\n  \"MovimientoSaldoInicial\": 0,\r\n  \"MoMovimiento\": 2000\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/Movimientos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retiro1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"moNumeroCuenta\": \"478758\",\r\n  \"moTipoMovimiento\": \"Debito\",\r\n  \"moMovimiento\": 50\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/Movimientos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retiro2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"moNumeroCuenta\": \"496825\",\r\n  \"moTipoMovimiento\": \"Debito\",\r\n  \"moMovimiento\": 540\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/Movimientos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposito1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"moNumeroCuenta\": \"225487\",\r\n  \"moTipoMovimiento\": \"Credito\",\r\n  \"moMovimiento\": 600\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/Movimientos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposito2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"moNumeroCuenta\": \"495878\",\r\n  \"moTipoMovimiento\": \"Credito\",\r\n  \"moSaldoInicial\": 0,\r\n  \"moMovimiento\": 150\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/Movimientos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultaMovimientoFechas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}/api/Movimientos/111111111&2022-05-28&2022-05-29",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Movimientos",
+						"111111111&2022-05-28&2022-05-29"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:54496",
+			"type": "default"
+		}
+	]
+}

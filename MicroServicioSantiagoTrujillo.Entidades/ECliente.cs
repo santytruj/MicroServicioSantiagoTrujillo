@@ -9,7 +9,6 @@ namespace MicroServicioSantiagoTrujillo.Entidades
         {
             Cuenta = new HashSet<ECuenta>();
         }
-
         public int ClienteIdCliente { get; set; }
         public string ClienteContrasena { get; set; }
         public bool ClienteEstado { get; set; }

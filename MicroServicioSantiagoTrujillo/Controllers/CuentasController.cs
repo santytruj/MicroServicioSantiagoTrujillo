@@ -16,10 +16,7 @@ namespace MicroServicioSantiagoTrujillo.Controllers
     {
         private readonly BaseMicroServicioSantiagoTrujilloContext _context;
 
-        public CuentasController(BaseMicroServicioSantiagoTrujilloContext context)
-        {
-            _context = context;
-        }
+        public CuentasController(BaseMicroServicioSantiagoTrujilloContext context) => _context = context;
 
         // GET: api/Cuentas
         [HttpGet]
@@ -34,12 +31,7 @@ namespace MicroServicioSantiagoTrujillo.Controllers
         {
             var cuenta = await _context.Cuentas.FindAsync(id);
 
-            if (cuenta == null)
-            {
-                return NotFound();
-            }
-
-            return cuenta;
+            return cuenta == null ? NotFound() : cuenta;
         }
 
         // PUT: api/Cuentas/5
@@ -69,11 +61,9 @@ namespace MicroServicioSantiagoTrujillo.Controllers
                     respuesta.Mensaje = ex.Message;
                     return respuesta;
                 }
-                else
-                {
-                    respuesta.Mensaje = ex.Message;
-                    return respuesta;
-                }
+
+                respuesta.Mensaje = ex.Message;
+                return respuesta;
             }
 
         }
@@ -86,13 +76,14 @@ namespace MicroServicioSantiagoTrujillo.Controllers
             Respuesta respuesta = new Respuesta();
             if (CuentaExists(cuenta.CuentaNumero))
             {
-                respuesta.Mensaje = "cuenta no se puedo modificado Correctamente";
+                respuesta.Mensaje = "Cuenta Se Encuetra Creada";
                 respuesta.StatusSuccess = false;
                 return respuesta;
             }
 
             try
             {
+                _context.Cuentas.Add(cuenta);
                 await _context.SaveChangesAsync();
                 respuesta.Mensaje = "Cuenta se creo Correctamente";
                 respuesta.StatusSuccess = true;
@@ -106,11 +97,9 @@ namespace MicroServicioSantiagoTrujillo.Controllers
                     respuesta.Mensaje = ex.Message;
                     return respuesta;
                 }
-                else
-                {
-                    respuesta.Mensaje = ex.Message;
-                    return respuesta;
-                }
+
+                respuesta.Mensaje = ex.Message;
+                return respuesta;
             }
         }
 
@@ -133,9 +122,6 @@ namespace MicroServicioSantiagoTrujillo.Controllers
             return respuesta;
         }
 
-        private bool CuentaExists(string id)
-        {
-            return _context.Cuentas.Any(e => e.CuentaNumero == id);
-        }
+        private bool CuentaExists(string id) => _context.Cuentas.Any(e => e.CuentaNumero == id);
     }
 }
